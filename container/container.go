@@ -800,9 +800,9 @@ func (container *Container) BuildCreateEndpointOptions(n libnetwork.Network, epC
 		}
 	}
 
-	if !containertypes.NetworkMode(n.Name()).IsUserDefined() {
-		createOptions = append(createOptions, libnetwork.CreateOptionDisableResolution())
-	}
+	//if !containertypes.NetworkMode(n.Name()).IsUserDefined() {
+	createOptions = append(createOptions, libnetwork.CreateOptionDisableResolution())
+	//}
 
 	// configs that are applicable only for the endpoint in the network
 	// to which container was connected to on docker run.
